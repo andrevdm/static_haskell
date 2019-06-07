@@ -1,6 +1,26 @@
 Static haskell build in alpine container with musl
 
-Based on
+## To build demo
+
+ 1. ./mkDocker.sh 
+ 1. cd egProject
+ 1. stack --docker build
+
+ldd on the resulting binary will show static binary
+
+
+## Based on
 
  - https://www.reddit.com/r/haskell/comments/bxggkz/ghc_builds_for_alpine_linux/
  - https://github.com/jkachmar/alpine-haskell-stack/blob/master/Dockerfile
+
+## Notes
+
+ - stack.yaml
+   - `repo: "apline_hs_8_6_5:latest"` so that stack uses the correct container
+   - `stack-exe: image` use stack from the image not the host
+
+ - .cabal
+   - `ghc-options: -static -optc-static -optl-static -fPIC ...`
+   - `ld-options: -static`
+
