@@ -1,0 +1,29 @@
+cabal-version:       2.2
+name:                egProject
+version:             0.1.0.0
+-- synopsis:
+-- description:
+homepage:            https://github.com/githubuser/egProject#readme
+license:             NONE
+license-file:        LICENSE
+author:              xxxx
+maintainer:          me@me.com
+copyright:           2019 xxxx
+category:            Web
+build-type:          Simple
+extra-source-files:  README.md
+
+executable egProject-exe
+  hs-source-dirs:      app
+  main-is:             Main.hs
+  ghc-options:         -static -optc-static -optl-static -fPIC -threaded -rtsopts -with-rtsopts=-N -Wall -Wincomplete-uni-patterns -Wincomplete-record-updates -Wimplicit-prelude -Wcompat -Wredundant-constraints -Wnoncanonical-monad-instances -Widentities -fhide-source-paths -Wmissing-export-lists -Wpartial-fields -fhide-source-paths -freverse-errors
+  ld-options:          -static
+  build-depends:       base
+                     , protolude
+                     , text
+                     , containers
+  default-language:    Haskell2010
+
+source-repository head
+  type:     git
+  location: https://github.com/githubuser/egProject
